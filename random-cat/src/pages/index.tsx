@@ -1,4 +1,9 @@
+import { useState } from "react";
+
 const IndexPage = () => {
-  return <h1>Hello, Next.js 👋</h1>;
+  const [catImageUrl, setCatImageUrl] = useState(
+    "https://cdn2.thecatapi.com/images/bpc.jpg"
+  );
+  return <img src={catImageUrl} />;
 };
 export default IndexPage;
