@@ -1,5 +1,5 @@
 // useStateを利用できるようにReactをimport
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // 画像URLをリストで定義
 const catImages: string[] = [
@@ -14,20 +14,34 @@ const randomCatImage = (): string => {
   return catImages[index];
 };
 
+// catAPIの実装
+const fetchCatImage = async () => {
+  const res = await fetch("https://api.thecatapi.com/v1/images/search");
+  const result = await res.json();
+  return result[0];
+};
+
+fetchCatImage().then((image) => {
+  console.log(`猫の画像: ${image.url}`);
+});
+
 // 画面を描画
 const IndexPage = () => {
-  const [catImageUrl, setCatImageUrl] = useState(
-    "https://cdn2.thecatapi.com/images/bpc.jpg"
-  );
+  const [catImage, setCatImage] = useState<string | undefined>(undefined);
 
   const handleClick = () => {
-    setCatImageUrl(randomCatImage());
+    setCatImage(randomCatImage());
   };
+
+  useEffect(() => {
+    setCatImage(randomCatImage());
+  }, []);
+
   return (
     <div>
       <button onClick={handleClick}>今日のにゃんこ🐱</button>
       <div style={{ marginTop: 8 }}>
-        <img src={catImageUrl} />
+        <img src={catImage} />
       </div>
     </div>
   );
