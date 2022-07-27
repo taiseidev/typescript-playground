@@ -13,9 +13,9 @@ function App() {
 }
 
 function LikeButton() {
-  return (
-    <span>いいねボタン予定</span>
-  )
+  const count = 999;
+  return <span className='likeButton'>💙{count}</span>
+
 }
 
 export default App;
