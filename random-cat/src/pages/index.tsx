@@ -1,5 +1,6 @@
 // useStateを利用できるようにReactをimport
 import { useEffect, useState } from "react";
+import type { NextPage, GetServerSideProps } from "next";
 
 // 画像URLをリストで定義
 const catImages: string[] = [
@@ -30,11 +31,13 @@ const fetchCatImage = async (): Promise<SearchCatImage> => {
   return result[0];
 };
 
+interface IndexPageProps {
+  initialCatImageUrl: string;
+}
+
 // 画面を描画
-const IndexPage = () => {
-  const [catImageUrl, setCatImageUrl] = useState(
-    "https://cdn2.thecatapi.com/images/bpc.jpg"
-  );
+const IndexPage: NextPage<IndexPageProps> = ({ initialCatImageUrl }) => {
+  const [catImageUrl, setCatImageUrl] = useState(initialCatImageUrl);
 
   const handleClick = async () => {
     const image = await fetchCatImage();
@@ -45,10 +48,21 @@ const IndexPage = () => {
     <div>
       <button onClick={handleClick}>今日のにゃんこ🐱</button>
       <div style={{ marginTop: 8 }}>
-        <img src={catImageUrl} />
+        <img src={catImageUrl} width={500} height="auto" />
       </div>
     </div>
   );
+};
+
+export const getServerSideProps: GetServerSideProps<
+  IndexPageProps
+> = async () => {
+  const catImage = await fetchCatImage();
+  return {
+    props: {
+      initialCatImageUrl: catImage.url,
+    },
+  };
 };
 
 export default IndexPage;
