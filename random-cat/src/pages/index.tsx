@@ -48,3 +48,17 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+interface CatCategory {
+  id: number;
+  name: string;
+}
+interface SearchCatImage {
+  breeds: string[];
+  categories: CatCategory[];
+  id: string;
+  url: string;
+  width: number;
+  height: number;
+}
+type SearchCatImageResponse = SearchCatImage[];
