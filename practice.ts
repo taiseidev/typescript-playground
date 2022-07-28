@@ -23,3 +23,32 @@ const arr = [2, 3];
 // arr = [3, 4]; ✖️
 arr[1] = 4;
 arr.push(5);
+
+var myName = "太郎";
+var yourName;
+
+// varを使わない方が良い理由
+var xy = 1;
+var xy = 2;
+// 同名の変数を宣言する事ができてしまう。
+// 後に定義した変数が採用される。
+
+// if文内で書いたxの変数を参照してif文下の変数xも2となってしまう
+// ブロックスコープを飛び越えて値を参照してしまう。
+function print() {
+  var x = 1;
+  if (true) {
+    var x = 2;
+    console.log(x); // 2
+  }
+  console.log(x); // 2
+}
+
+function print() {
+  const x = 1;
+  if (true) {
+    const x = 2;
+    console.log(x); // 2
+  }
+  console.log(x); // 1
+}
