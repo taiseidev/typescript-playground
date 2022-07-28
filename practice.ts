@@ -52,3 +52,15 @@ function print() {
   }
   console.log(x); // 1
 }
+
+// 型推論と動的型付けの違い
+// 型推論はコンパイル時に型が推論されてそれ以降は変更される事がないためあくまでも静的型付け
+let a = 1; // この時点でaの型はnumberだと推論される
+// let a: number;
+// a = "hello";aはnumberのためstringを入れることはできない
+
+// 動的型付けは実行のタイミングで型が決まる
+// let x = 1; // xはnumber型となる
+// x = "hello"; //x はstring型となる
+// console.log(x.substring(1, 3));
+// これ色んなところでバグ発生しそうだな....
