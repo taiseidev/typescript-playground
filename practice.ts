@@ -64,3 +64,21 @@ let a = 1; // この時点でaの型はnumberだと推論される
 // x = "hello"; //x はstring型となる
 // console.log(x.substring(1, 3));
 // これ色んなところでバグ発生しそうだな....
+
+// javascriptのプリミティブ型はオブジェクトとして扱える
+// ex)
+"name".length; // 4
+// javascriptのプリミティブ型は下記の通り
+// 論理型(boolean): trueまたはfalseの真偽値。
+const isShow = true;
+// 数値型(number): 0や0.1のような数値。
+const num = 1;
+// 文字列型(string): "Hello World"のような文字列。
+const hello = `Helllo World`;
+// undefined型: 値が未定義であることを表す型。
+let und; // undefined
+// ヌル型(null): 値がないことを表す型。
+let nul = null;
+// シンボル型(symbol): 一意で不変の値。
+const s1 = Symbol("foo");
+// bigint型: 9007199254740992nのようなnumber型では扱えない大きな整数型。
