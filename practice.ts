@@ -82,3 +82,7 @@ let nul = null;
 // シンボル型(symbol): 一意で不変の値。
 const s1 = Symbol("foo");
 // bigint型: 9007199254740992nのようなnumber型では扱えない大きな整数型。
+
+// 論理型
+const isOk = true;
+const isNotOk = false;
