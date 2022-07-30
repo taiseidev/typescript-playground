@@ -119,3 +119,8 @@ console.log(NaN === NaN);
 
 // Infinity型は無限を表す変数
 const infinityNum = Math.pow(10, 1000);
+
+// javascriptでは少数の計算に誤差が発生する
+0.1 + 0.2 === 0.3; // false
+110 * 1.1; // 121.00000000000001
+(110 * 11) / 10 === 121; // true
