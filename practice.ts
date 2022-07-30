@@ -141,3 +141,8 @@ console.log(`税込${Math.floor(100 * 1.1)}です`);
 const message: string = "Hello";
 
 "文字列を" + "結合する事ができます";
+
+const nullX: null = null;
+
+// javascriptではnullに対してtypeofを用いるとobjectが返るので注意が必要
+console.log(typeof null); // object
