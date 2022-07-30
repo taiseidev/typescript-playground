@@ -84,5 +84,38 @@ const s1 = Symbol("foo");
 // bigint型: 9007199254740992nのようなnumber型では扱えない大きな整数型。
 
 // 論理型
-const isOk = true;
-const isNotOk = false;
+const isOk: boolean = true;
+const isNotOk: boolean = false;
+
+// javascriptでは整数と少数を区別せず、どちらともnumber型
+// こんな書き方もできる（使うことはあるのだろうか？）
+0.1 == 0.1;
+5.0 == 5;
+
+// ○進数を表現したい時は下記のようにする
+0b1010; // 2進数
+0o755; // 8進数
+0xfff; // 16進数
+
+// 桁ごとに区切って表現することも可能
+const ONE_HUDRED_MILLION: number = 100_000_000;
+
+// 数値リテラルのプロパティ
+
+// 小数のドットと区別する事ができないためエラーが発生する
+// 5.toString();
+(5).toString();
+
+// 数値化できない値に対してはNaN型が返却される
+const price: number = parseInt("百円");
+// NaNであるかのチェック
+if (Number.isNaN(price)) {
+  console.log("数値化できません");
+}
+
+// NaNは等号比較では常にfalseになるため注意が必要である
+console.log(NaN == NaN);
+console.log(NaN === NaN);
+
+// Infinity型は無限を表す変数
+const infinityNum = Math.pow(10, 1000);
