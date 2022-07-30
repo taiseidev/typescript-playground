@@ -124,3 +124,20 @@ const infinityNum = Math.pow(10, 1000);
 0.1 + 0.2 === 0.3; // false
 110 * 1.1; // 121.00000000000001
 (110 * 11) / 10 === 121; // true
+
+("Hello");
+("Hello");
+`Hello`;
+
+('He said "madam, I\'m Adam."');
+('He said "madam, I\'m Adam."');
+
+// テンプレートリテラル内では変数や計算式や関数を入れる事ができる
+
+const count = 10;
+console.log(`現在${count}名が見ています。`);
+console.log(`税込${Math.floor(100 * 1.1)}です`);
+
+const message: string = "Hello";
+
+"文字列を" + "結合する事ができます";
