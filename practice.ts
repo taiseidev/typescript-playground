@@ -146,3 +146,13 @@ const nullX: null = null;
 
 // javascriptではnullに対してtypeofを用いるとobjectが返るので注意が必要
 console.log(typeof null); // object
+
+let nameX;
+console.log(nameX);
+function func() {}
+console.log(func());
+// const objX = {};
+// console.log(obj.name);
+const arrX = [];
+console.log(arrX[1]);
+const undefinedX: undefined = undefined;
