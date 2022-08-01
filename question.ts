@@ -5,8 +5,17 @@ const greeting = (value: string) => "hello" + value;
 
 // 1
 // https://typescriptbook.jp/reference/type-reuse/utility-types/partial
-interface Foo {
+interface FooA {
   bar: string;
   baz: number;
 }
-type PartialFoo = Partial<Foo>;
+type PartialFoo = Partial<FooA>;
+
+// 2
+// https://typescriptbook.jp/reference/type-reuse/utility-types/required
+type FooB = {
+  name?: string;
+  age?: number;
+};
+
+type RequireA = Required<FooB>;
