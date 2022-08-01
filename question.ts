@@ -2,3 +2,11 @@
 
 // 0
 const greeting = (value: string) => "hello" + value;
+
+// 1
+// https://typescriptbook.jp/reference/type-reuse/utility-types/partial
+interface Foo {
+  bar: string;
+  baz: number;
+}
+type PartialFoo = Partial<Foo>;
