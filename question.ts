@@ -28,3 +28,12 @@ type FooC = {
 };
 
 type Picked = Pick<FooC, "name">;
+
+// 4
+// https://typescriptbook.jp/reference/type-reuse/utility-types/omit
+type FooD = {
+  name?: string;
+  age?: number;
+};
+
+type Omitted = Omit<FooD, "age">;
