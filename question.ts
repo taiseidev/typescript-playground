@@ -19,3 +19,12 @@ type FooB = {
 };
 
 type RequireA = Required<FooB>;
+
+// 3
+// https://typescriptbook.jp/reference/type-reuse/utility-types/pick
+type FooC = {
+  name?: string;
+  age?: number;
+};
+
+type Picked = Pick<FooC, "name">;
