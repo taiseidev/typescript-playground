@@ -37,3 +37,14 @@ type FooD = {
 };
 
 type Omitted = Omit<FooD, "age">;
+
+// 5
+// https://www.azukipan.com/posts/typescript-type-literal/#:~:text=%E3%83%AA%E3%83%86%E3%83%A9%E3%83%AB%E5%9E%8B%E3%81%AF%E3%80%81%E9%96%8B%E7%99%BA%E8%80%85,%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%82%8B%E5%9E%8B%E3%81%A7%E3%81%99%E3%80%82
+
+const user = { name: "kenji", age: 98 };
+
+// {
+//   name: string;
+//   age: number;
+// }
+// 上記に推論される。
