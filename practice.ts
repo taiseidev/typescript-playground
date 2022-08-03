@@ -170,11 +170,26 @@ testName = "テストさん1";
 // };
 
 // interfaceを定義すると次のように書く事ができる
-interface Member {
+// interface Member {
+//   nickName: string;
+//   isHuman: boolean;
+//   level: number;
+// }
+
+// let apple: Member = {
+//   nickName: "りんご",
+//   isHuman: false,
+//   level: 0,
+// };
+
+// apple.isHuman;
+
+// typeを定義すると次のように書く事ができる
+type Member = {
   nickName: string;
   isHuman: boolean;
   level: number;
-}
+};
 
 let apple: Member = {
   nickName: "りんご",
