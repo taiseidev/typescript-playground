@@ -156,3 +156,30 @@ console.log(func());
 const arrX = [];
 console.log(arrX[1]);
 const undefinedX: undefined = undefined;
+
+// typeとinterfaceの違いは？
+// typescriptでは次のように定義する事ができうr
+let testName: string = "テストさん";
+testName = "テストさん1";
+
+// しかし次のように複雑になると見辛くなる
+// let apple: { nickName: string; isHuman: boolean; level: number } = {
+//   nickName: "りんご",
+//   isHuman: false,
+//   level: 0,
+// };
+
+// interfaceを定義すると次のように書く事ができる
+interface Member {
+  nickName: string;
+  isHuman: boolean;
+  level: number;
+}
+
+let apple: Member = {
+  nickName: "りんご",
+  isHuman: false,
+  level: 0,
+};
+
+apple.isHuman;
