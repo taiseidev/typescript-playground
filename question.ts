@@ -51,3 +51,22 @@ const user = { name: "kenji", age: 98 };
 
 // 6
 // TがUに代入可能ならXを返し、そうでなければYを返す。
+
+// 7
+interface Part {
+  name: string;
+  age: number;
+  add(): number;
+}
+
+const obj = {
+  name: "kenji",
+  age: 99,
+  add: () => 1 * 2,
+};
+
+type FunctionPropertyNames<T> = {
+  [K in keyof T]: T[K] extends Function ? K : never;
+}[keyof T];
+
+type result = FunctionPropertyNames<Part>;
