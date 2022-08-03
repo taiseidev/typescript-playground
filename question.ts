@@ -48,3 +48,6 @@ const user = { name: "kenji", age: 98 };
 //   age: number;
 // }
 // 上記に推論される。
+
+// 6
+// TがUに代入可能ならXを返し、そうでなければYを返す。
