@@ -37,4 +37,15 @@ export default function objectSample() {
   torahack.lastName = 'suzuki'
   // 読み取り専用のため上書き不可
   //   torahack.firstName = 'sato'
+
+  // インデックスシグネチャ
+  const capitals: {
+    [countryName: string]: string
+  } = {
+    Japan: 'Tokyo',
+    Korea: 'Seoul',
+  }
+  capitals.China = 'Beijing'
+  capitals.Canada = 'Ottawa'
+  console.log('Object object sample 4 :', capitals)
 }
