@@ -18,7 +18,9 @@ module.exports = {
   },
   // ローカルのwebサーバーが参照するディレクトリ先
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    static: {
+      directory: path.resolve(__dirname, "./dist"),
+    },
     // trueにするとwebサーバーを立ち上げた時に自動的にブラウザを開いてくれる
     open: true,
   },
