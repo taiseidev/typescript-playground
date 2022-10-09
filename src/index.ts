@@ -28,3 +28,6 @@
 // 05.オブジェクトの型定義
 import objectSample from './object/object'
 objectSample()
+
+import typeAliasSample from './object/alias'
+typeAliasSample()
