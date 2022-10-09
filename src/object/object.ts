@@ -20,4 +20,21 @@ export default function objectSample() {
     name: 'United State of America',
   }
   console.log('Object object sample 2 :', country)
+
+  // オプショナルとreadonly
+  const torahack: {
+    age: number
+    lastName: string
+    readonly firstName: string
+    gender?: string
+  } = {
+    age: 28,
+    lastName: 'kamado',
+    firstName: 'taro',
+  }
+
+  torahack.gender = 'male'
+  torahack.lastName = 'suzuki'
+  // 読み取り専用のため上書き不可
+  //   torahack.firstName = 'sato'
 }
