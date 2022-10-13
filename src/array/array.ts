@@ -29,4 +29,9 @@ export default function arraySample() {
   someArray.push(456)
   // someArray.push(true)
   console.log('Array array sample 4', someArray)
+
+  const commands: readonly string[] = ['git add', 'git commit', 'git push']
+  // commands.push('git fetch')
+  // commands[0] = 'git pull'
+  console.log('Array array sample 5', commands)
 }
